@@ -10,8 +10,9 @@ async function init() {
 
     socketService.io.attach(httpServer);
     httpServer.listen(PORT, () => {
-        console.log(`HTTP Server started at PORT: ${PORT}`);
+        console.log(`HTTP Server started at PORT : ${PORT}`);
     })
+    socketService.initListeners();
 }
 
 init();
