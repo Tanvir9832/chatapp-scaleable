@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { io } from 'socket.io-client'
 
 interface SocketProviderProps {
@@ -12,6 +12,13 @@ interface ISocketContext {
 
 const SocketContext = React.createContext<ISocketContext | null>(null);
 
+
+export const useSocket = () => {
+    const state = useContext(SocketContext);
+    if (!state) throw new Error(`state is undefined`);
+
+    return state;
+}
 
 
 
