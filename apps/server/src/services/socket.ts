@@ -18,7 +18,7 @@ class SocketService {
             console.log(`New Socket Connected -->`, socket.id);
 
             socket.on('event:message', async ({ message }: { message: string }) => {
-                console.log("New message ", message);
+                console.log(message);
             })
         })
     }
